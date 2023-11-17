@@ -134,13 +134,14 @@ export const PrintIcon = styled.p`
 `;
 
 export const TableSection = styled.table`
-  background-color: violet;
+  /* background-color: violet; */
   width: 100vw;
   height: auto;
 
   thead {
     height: 40px;
-    background-color: red;
+    /* border-top: 1px solid black; */
+    background-color: #eeeeee;
     /* padding: 30px 0px; */
     text-align: left;
   }
@@ -161,21 +162,58 @@ export const ProductImg = styled.img`
 `;
 
 export const StatusBox = styled.div`
-  width: 15vw;
+  width: 10vw;
   text-align: center;
   padding: 5px;
+  border-radius: 25px;
+  margin-left: 25px;
   /* color: white; */
   /* background-color: black; */
 `;
 export const ACE_Sec = styled.div`
-  /* background-color: red; */
   display: flex;
   justify-content: space-around;
   width: 10vw;
   display: flex;
-  padding: 5px;
 `;
 
 export const Approvel = styled.div``;
 export const Missing = styled.div``;
 export const Edit = styled.div``;
+
+export const ConfirmationPOPUP = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const POPUP_Card = styled.div`
+  background: white;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  height: 250px;
+  width: 350px;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+`;
+
+export const POPUP_H1 = styled.h2`
+  font-family: sans-serif;
+  /* font-weight: bold; */
+`;
+
+export const POPBtns = styled.div`
+  display: flex;
+  width: fit-content;
+  gap: 20px;
+  margin-top: 100px;
+  margin-left: 150px;
+`;

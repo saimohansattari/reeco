@@ -5,12 +5,16 @@ import {
   Btn1,
   CardBox,
   CardShowcase,
+  ConfirmationPOPUP,
   Edit,
   GrayText13,
   Mainsection,
   Missing,
   NavText,
   NavText2,
+  POPBtns,
+  POPUP_Card,
+  POPUP_H1,
   PrintIcon,
   ProductImg,
   SearchContainer,
@@ -21,11 +25,36 @@ import {
   Text13,
 } from "../../Components/StyledComponents";
 import { Apple, Avocado } from "../../asserts/index.js";
+import { useState } from "react";
 
 function Order() {
+  const [status, setStatus] = useState("");
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
   const handlePrint = () => {
     window.print();
   };
+
+  const handleApprove = () => {
+    setStatus("Approvel");
+  };
+
+  const handleMissing = () => {
+    setShowConfirmation(true);
+  };
+
+  const confirmMissing = () => {
+    setStatus("Missing");
+    setShowConfirmation(false);
+  };
+
+  const cancelConfirmation = () => {
+    setShowConfirmation(false);
+  };
+
+  // const handlePrint = () => {
+  //   window.print();
+  // };
   return (
     <Mainsection>
       <CardShowcase>
@@ -83,7 +112,48 @@ function Order() {
             <tr>
               <td style={{ display: "flex" }}>
                 <ProductImg src={Avocado} />
-                &nbsp;&nbsp; Lorem ipsum dolor sit amet consectetur.
+                &nbsp; Lorem ipsum dolor sit amet
+                <br /> consectetur adipisicing elit.
+              </td>
+              <td>
+                Hormel black <br />
+                labelmany
+              </td>
+              <td>$60.67/6+1LB</td>
+              <td>2*6LB</td>
+              <td>0</td>
+              <td
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <StatusBox
+                  style={{
+                    backgroundColor:
+                      status === "Approvel"
+                        ? "green"
+                        : status === "Missing"
+                        ? "red"
+                        : "",
+                  }}
+                >
+                  {status}
+                </StatusBox>
+                <ACE_Sec>
+                  <Approvel onClick={handleApprove}>✔</Approvel>
+                  <Missing onClick={handleMissing}>✘</Missing>
+                  <Edit>📝</Edit>
+                </ACE_Sec>
+              </td>
+            </tr>
+
+            <tr>
+              <td style={{ display: "flex" }}>
+                <ProductImg src={Avocado} />
+                &nbsp; Lorem ipsum dolor sit amet
+                <br /> consectetur adipisicing elit.
               </td>
               <td>
                 Hormel black <br />
@@ -92,11 +162,268 @@ function Order() {
               <td>$60.67/6+1LB</td>
               <td>2*6LB</td>
               <td>$9000.00</td>
-              <td style={{ display: "flex" }}>
-                <StatusBox>Missing-urgent</StatusBox>
+              <td
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <StatusBox
+                  style={{
+                    backgroundColor:
+                      status === "Approvel"
+                        ? "green"
+                        : status === "Missing"
+                        ? "red"
+                        : "",
+                  }}
+                >
+                  {status}
+                </StatusBox>
                 <ACE_Sec>
-                  <Approvel>✔</Approvel>
-                  <Missing>✘</Missing>
+                  <Approvel onClick={handleApprove}>✔</Approvel>
+                  <Missing onClick={handleMissing}>✘</Missing>
+                  <Edit>📝</Edit>
+                </ACE_Sec>
+              </td>
+            </tr>
+
+            <tr>
+              <td style={{ display: "flex" }}>
+                <ProductImg src={Avocado} />
+                &nbsp; Lorem ipsum dolor sit amet
+                <br /> consectetur adipisicing elit.
+              </td>
+              <td>
+                Hormel black <br />
+                labelmany
+              </td>
+              <td>$60.67/6+1LB</td>
+              <td>1*6LB</td>
+              <td>$9000.00</td>
+              <td
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <StatusBox
+                  style={{
+                    backgroundColor:
+                      status === "Approvel"
+                        ? "green"
+                        : status === "Missing"
+                        ? "red"
+                        : "",
+                  }}
+                >
+                  {status}
+                </StatusBox>
+                <ACE_Sec>
+                  <Approvel onClick={handleApprove}>✔</Approvel>
+                  <Missing onClick={handleMissing}>✘</Missing>
+                  <Edit>📝</Edit>
+                </ACE_Sec>
+              </td>
+            </tr>
+
+            <tr>
+              <td style={{ display: "flex" }}>
+                <ProductImg src={Avocado} />
+                &nbsp; Lorem ipsum dolor sit amet
+                <br /> consectetur adipisicing elit.
+              </td>
+              <td>
+                Hormel black <br />
+                labelmany
+              </td>
+              <td>$60.67/6+1LB</td>
+              <td>0*6LB</td>
+              <td>0</td>
+              <td
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <StatusBox
+                  style={{
+                    backgroundColor:
+                      status === "Approvel"
+                        ? "green"
+                        : status === "Missing"
+                        ? "red"
+                        : "",
+                  }}
+                >
+                  {status}
+                </StatusBox>
+                <ACE_Sec>
+                  <Approvel onClick={handleApprove}>✔</Approvel>
+                  <Missing onClick={handleMissing}>✘</Missing>
+                  <Edit>📝</Edit>
+                </ACE_Sec>
+              </td>
+            </tr>
+
+            <tr>
+              <td style={{ display: "flex" }}>
+                <ProductImg src={Avocado} />
+                &nbsp; Lorem ipsum dolor sit amet
+                <br /> consectetur adipisicing elit.
+              </td>
+              <td>
+                Hormel black <br />
+                labelmany
+              </td>
+              <td>$60.67/6+1LB</td>
+              <td>2*6LB</td>
+              <td>$195.30</td>
+              <td
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <StatusBox
+                  style={{
+                    backgroundColor:
+                      status === "Approvel"
+                        ? "green"
+                        : status === "Missing"
+                        ? "red"
+                        : "",
+                  }}
+                >
+                  {status}
+                </StatusBox>
+                <ACE_Sec>
+                  <Approvel onClick={handleApprove}>✔</Approvel>
+                  <Missing onClick={handleMissing}>✘</Missing>
+                  <Edit>📝</Edit>
+                </ACE_Sec>
+              </td>
+            </tr>
+
+            <tr>
+              <td style={{ display: "flex" }}>
+                <ProductImg src={Avocado} />
+                &nbsp; Lorem ipsum dolor sit amet
+                <br /> consectetur adipisicing elit.
+              </td>
+              <td>
+                Hormel black <br />
+                labelmany
+              </td>
+              <td>$60.67/6+1LB</td>
+              <td>0*6LB</td>
+              <td>$90</td>
+              <td
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <StatusBox
+                  style={{
+                    backgroundColor:
+                      status === "Approvel"
+                        ? "green"
+                        : status === "Missing"
+                        ? "red"
+                        : "",
+                  }}
+                >
+                  {status}
+                </StatusBox>
+                <ACE_Sec>
+                  <Approvel onClick={handleApprove}>✔</Approvel>
+                  <Missing onClick={handleMissing}>✘</Missing>
+                  <Edit>📝</Edit>
+                </ACE_Sec>
+              </td>
+            </tr>
+
+            <tr>
+              <td style={{ display: "flex" }}>
+                <ProductImg src={Avocado} />
+                &nbsp; Lorem ipsum dolor sit amet
+                <br /> consectetur adipisicing elit.
+              </td>
+              <td>
+                Hormel black <br />
+                labelmany
+              </td>
+              <td>$60.67/6+1LB</td>
+              <td>0*6LB</td>
+              <td>$90.50</td>
+              <td
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <StatusBox
+                  style={{
+                    backgroundColor:
+                      status === "Approvel"
+                        ? "green"
+                        : status === "Missing"
+                        ? "red"
+                        : "",
+                  }}
+                >
+                  {status}
+                </StatusBox>
+                <ACE_Sec>
+                  <Approvel onClick={handleApprove}>✔</Approvel>
+                  <Missing onClick={handleMissing}>✘</Missing>
+                  <Edit>📝</Edit>
+                </ACE_Sec>
+              </td>
+            </tr>
+
+            <tr>
+              <td style={{ display: "flex" }}>
+                <ProductImg src={Avocado} />
+                &nbsp; Lorem ipsum dolor sit amet
+                <br /> consectetur adipisicing elit.
+              </td>
+              <td>
+                Hormel black <br />
+                labelmany
+              </td>
+              <td>$60.67/6+1LB</td>
+              <td>2*6LB</td>
+              <td>$9000.00</td>
+              <td
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <StatusBox
+                  style={{
+                    backgroundColor:
+                      status === "Approvel"
+                        ? "green"
+                        : status === "Missing"
+                        ? "red"
+                        : "",
+                  }}
+                >
+                  {status}
+                </StatusBox>
+                <ACE_Sec>
+                  <Approvel onClick={handleApprove}>✔</Approvel>
+                  <Missing onClick={handleMissing}>✘</Missing>
                   <Edit>📝</Edit>
                 </ACE_Sec>
               </td>
@@ -104,6 +431,19 @@ function Order() {
           </tbody>
         </TableSection>
       </TableDashboard>
+
+      {showConfirmation && (
+        <ConfirmationPOPUP>
+          <POPUP_Card>
+            <POPUP_H1>Missing Product !</POPUP_H1>
+            <p>is chicken Brest fillets,...</p>
+            <POPBtns>
+              <Btn1 onClick={confirmMissing}>Yes</Btn1>
+              <Btn1 onClick={cancelConfirmation}>No</Btn1>
+            </POPBtns>
+          </POPUP_Card>
+        </ConfirmationPOPUP>
+      )}
     </Mainsection>
   );
 }
