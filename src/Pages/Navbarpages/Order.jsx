@@ -1,19 +1,26 @@
 import React from "react";
 import {
+  ACE_Sec,
+  Approvel,
   Btn1,
   CardBox,
   CardShowcase,
+  Edit,
   GrayText13,
   Mainsection,
+  Missing,
   NavText,
   NavText2,
   PrintIcon,
+  ProductImg,
   SearchContainer,
   SearchInput,
+  StatusBox,
   TableDashboard,
   TableSection,
   Text13,
 } from "../../Components/StyledComponents";
+import { Apple, Avocado } from "../../asserts/index.js";
 
 function Order() {
   const handlePrint = () => {
@@ -74,20 +81,25 @@ function Order() {
           </thead>
           <tbody>
             <tr>
-              <td>Product 1</td>
-              <td>Brand A</td>
-              <td>$20.00</td>
-              <td>2</td>
-              <td>$40.00</td>
-              <td>In Stock</td>
-            </tr>
-            <tr>
-              <td>Product 2</td>
-              <td>Brand B</td>
-              <td>$30.00</td>
-              <td>1</td>
-              <td>$30.00</td>
-              <td>Out of Stock</td>
+              <td style={{ display: "flex" }}>
+                <ProductImg src={Avocado} />
+                &nbsp;&nbsp; Lorem ipsum dolor sit amet consectetur.
+              </td>
+              <td>
+                Hormel black <br />
+                labelmany
+              </td>
+              <td>$60.67/6+1LB</td>
+              <td>2*6LB</td>
+              <td>$9000.00</td>
+              <td style={{ display: "flex" }}>
+                <StatusBox>Missing-urgent</StatusBox>
+                <ACE_Sec>
+                  <Approvel>✔</Approvel>
+                  <Missing>✘</Missing>
+                  <Edit>📝</Edit>
+                </ACE_Sec>
+              </td>
             </tr>
           </tbody>
         </TableSection>

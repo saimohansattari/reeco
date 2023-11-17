@@ -144,6 +144,38 @@ export const TableSection = styled.table`
     /* padding: 30px 0px; */
     text-align: left;
   }
+
+  thead th {
+    padding-right: 10px;
+  }
+
+  td {
+    padding: 5px;
+    /* display: flex; */
+  }
 `;
 
-export const ProductImg = styled.img``;
+export const ProductImg = styled.img`
+  width: 35px;
+  height: 35px;
+`;
+
+export const StatusBox = styled.div`
+  width: 15vw;
+  text-align: center;
+  padding: 5px;
+  /* color: white; */
+  /* background-color: black; */
+`;
+export const ACE_Sec = styled.div`
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-around;
+  width: 10vw;
+  display: flex;
+  padding: 5px;
+`;
+
+export const Approvel = styled.div``;
+export const Missing = styled.div``;
+export const Edit = styled.div``;
