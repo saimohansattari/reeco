@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const NavbarSection = styled.div`
   padding: 10px 60px 10px 60px;
   width: 100vw;
-  /* height: 80px; */
   background-color: #044f04;
   display: flex;
   justify-content: space-between;
@@ -90,15 +89,12 @@ export const Text13 = styled.p`
 `;
 
 export const TableDashboard = styled.div`
-  /* display: flex;
-  justify-content: space-between; */
   width: 88vw;
   border: 1px solid #8080803f;
   border-radius: 4px;
   padding: 20px 10px;
   background-color: white;
   display: flex;
-  /* justify-content: space-between; */
   flex-wrap: wrap;
   box-shadow: 0px 0px 8px #8080808c;
 `;
@@ -134,15 +130,12 @@ export const PrintIcon = styled.p`
 `;
 
 export const TableSection = styled.table`
-  /* background-color: violet; */
   width: 100vw;
   height: auto;
 
   thead {
     height: 40px;
-    /* border-top: 1px solid black; */
     background-color: #eeeeee;
-    /* padding: 30px 0px; */
     text-align: left;
   }
 
@@ -152,7 +145,6 @@ export const TableSection = styled.table`
 
   td {
     padding: 5px;
-    /* display: flex; */
   }
 `;
 
@@ -167,8 +159,6 @@ export const StatusBox = styled.div`
   padding: 5px;
   border-radius: 25px;
   margin-left: 25px;
-  /* color: white; */
-  /* background-color: black; */
 `;
 export const ACE_Sec = styled.div`
   display: flex;
@@ -203,7 +193,6 @@ export const POPUP_Card = styled.div`
   background: white;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   height: 250px;
   width: 350px;
   padding: 40px;
@@ -213,7 +202,6 @@ export const POPUP_Card = styled.div`
 
 export const POPUP_H1 = styled.h2`
   font-family: sans-serif;
-  /* font-weight: bold; */
 `;
 
 export const POPBtns = styled.div`
