@@ -28,23 +28,33 @@ import { Apple, Avocado } from "../../asserts/index.js";
 import { useState } from "react";
 
 function Order() {
-  const [status, setStatus] = useState("");
+  const [statuses, setStatuses] = useState(Array(8).fill(""));
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [confirmationIndex, setConfirmationIndex] = useState(null);
 
   const handlePrint = () => {
     window.print();
   };
 
-  const handleApprove = () => {
-    setStatus("Approvel");
+  const handleApprove = (index) => {
+    const newStatuses = [...statuses];
+    newStatuses[index] = "Approvel";
+    setStatuses(newStatuses);
   };
 
-  const handleMissing = () => {
+  const handleMissing = (index) => {
     setShowConfirmation(true);
+    setConfirmationIndex(index);
   };
 
-  const confirmMissing = () => {
-    setStatus("Missing");
+  const confirmMissing = (index) => {
+    // setStatuses("Missing");
+    // setShowConfirmation(false);
+    const newStatuses = [...statuses];
+    newStatuses[index] = "Missing";
+    setStatuses(newStatuses);
+
+    // Close the confirmation popup
     setShowConfirmation(false);
   };
 
@@ -109,7 +119,52 @@ function Order() {
             </tr>
           </thead>
           <tbody>
-            <tr>
+            {Array(8)
+              .fill(null)
+              .map((_, index) => (
+                <tr key={index}>
+                  <td style={{ display: "flex" }}>
+                    <ProductImg src={Avocado} />
+                    &nbsp; Lorem ipsum dolor sit amet
+                    <br /> consectetur adipisicing elit.
+                  </td>
+                  <td>
+                    Hormel black <br />
+                    labelmany
+                  </td>
+                  <td>$60.67/6+1LB</td>
+                  <td>2*6LB</td>
+                  <td>0</td>
+                  <td
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <StatusBox
+                      style={{
+                        backgroundColor:
+                          statuses[index] === "Approvel"
+                            ? "green"
+                            : statuses[index] === "Missing"
+                            ? "red"
+                            : "",
+                      }}
+                    >
+                      {statuses[index]}
+                    </StatusBox>
+                    <ACE_Sec>
+                      <Approvel onClick={() => handleApprove(index)}>
+                        ✔
+                      </Approvel>
+                      <Missing onClick={() => handleMissing(index)}>✘</Missing>
+                      <Edit>📝</Edit>
+                    </ACE_Sec>
+                  </td>
+                </tr>
+              ))}
+            {/* <tr>
               <td style={{ display: "flex" }}>
                 <ProductImg src={Avocado} />
                 &nbsp; Lorem ipsum dolor sit amet
@@ -187,9 +242,9 @@ function Order() {
                   <Edit>📝</Edit>
                 </ACE_Sec>
               </td>
-            </tr>
+            </tr> */}
 
-            <tr>
+            {/* <tr>
               <td style={{ display: "flex" }}>
                 <ProductImg src={Avocado} />
                 &nbsp; Lorem ipsum dolor sit amet
@@ -360,7 +415,7 @@ function Order() {
                 labelmany
               </td>
               <td>$60.67/6+1LB</td>
-              <td>0*6LB</td>
+              <td>1*6LB</td>
               <td>$90.50</td>
               <td
                 style={{
@@ -427,7 +482,7 @@ function Order() {
                   <Edit>📝</Edit>
                 </ACE_Sec>
               </td>
-            </tr>
+            </tr> */}
           </tbody>
         </TableSection>
       </TableDashboard>
@@ -438,7 +493,7 @@ function Order() {
             <POPUP_H1>Missing Product !</POPUP_H1>
             <p>is chicken Brest fillets,...</p>
             <POPBtns>
-              <Btn1 onClick={confirmMissing}>Yes</Btn1>
+              <Btn1 onClick={() => confirmMissing(confirmationIndex)}>Yes</Btn1>
               <Btn1 onClick={cancelConfirmation}>No</Btn1>
             </POPBtns>
           </POPUP_Card>

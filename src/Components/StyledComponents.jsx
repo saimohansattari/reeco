@@ -42,9 +42,9 @@ export const NavBtns = styled.a`
 export const Mainsection = styled.div`
   width: 100vw;
   height: 100vh;
-  padding: 25px 0px;
+  padding: 35px 0px;
   display: flex;
-  /* justify-content: center; */
+  gap: 40px;
   flex-direction: column;
   align-items: center;
 `;
@@ -177,9 +177,15 @@ export const ACE_Sec = styled.div`
   display: flex;
 `;
 
-export const Approvel = styled.div``;
-export const Missing = styled.div``;
-export const Edit = styled.div``;
+export const Approvel = styled.div`
+  cursor: pointer;
+`;
+export const Missing = styled.div`
+  cursor: pointer;
+`;
+export const Edit = styled.div`
+  cursor: pointer;
+`;
 
 export const ConfirmationPOPUP = styled.div`
   position: fixed;
